@@ -34,6 +34,7 @@ func (s *NodeQueue) Enqueue(t Vertex) {
 }
 
 // Dequeue removes an Node from the start of the queue
+// O(1)
 func (s *NodeQueue) Dequeue() *Vertex {
 	s.lock.Lock()
 	defer s.lock.Unlock()
@@ -51,6 +52,7 @@ func (s *NodeQueue) NewQ() *NodeQueue {
 }
 
 // IsEmpty returns true if the queue is empty
+// O(1)
 func (s *NodeQueue) IsEmpty() bool {
 	s.lock.RLock()
 	defer s.lock.RUnlock()
@@ -58,6 +60,7 @@ func (s *NodeQueue) IsEmpty() bool {
 }
 
 // Size returns the number of Nodes in the queue
+// O(1)
 func (s *NodeQueue) Size() int {
 	s.lock.RLock()
 	defer s.lock.RUnlock()
